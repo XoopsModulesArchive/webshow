@@ -1,0 +1,13 @@
+Instructions to Upgrade WebShow v.6* to v.71:
+Backup your site and data base.
+
+Upload the WebShow archive, overwriting all existing files.
+
+Go to system admin - module admin and update the WebShow module.  
+This may take a minute as the onupdate file adjusts the data base and deletes old files.
+
+Empty public_html/template_c or xoopscache.  Leave the dummy index.html file.
+
+Set the new module preference settings.
+
+To display track and feed data visit each "Web Feed" entry and set Flash Variable "enablejs" then add track and feed to the entry info selections. 

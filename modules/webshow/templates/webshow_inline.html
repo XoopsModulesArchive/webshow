@@ -1,0 +1,116 @@
+<!-- //** Web Show Inline adds javascript and dynamic css. -->
+<style>
+#wsmoviebox {float: left; width: <{$screen.width}>px; margin: 0px; padding: 0px;}
+#wsmovie {float: left; width: <{$screen.width}>px; margin: 0px 2px 4px 0px; text-align: center; border: 0px solid #111}
+.wsloopcolumn {float: left; width: <{$columnwidth-2}>%; min-width: <{$logowidth+6}>px; margin: 4px 0px 4px 2px; padding: 0px; text-align: center; border: 1px solid #111;}
+
+.wsitemlogo {
+float: left; 
+width: <{$logowidth}>px;
+height: <{$logowidth}>px;
+margin: 4px 2px;
+padding: 0px;
+text-align: center;
+background-repeat: no-repeat;
+background-attachment: float;
+background-position: center;
+background-color: #fff;
+cursor: pointer;
+border: 1px solid #111;
+}
+.wsitemlogotop {height: <{$logowidth-20}>px;}
+.wsitemlogobot {height: 20px;}
+</style>
+
+<{if $themefromplayer}>
+<style>
+.item {border: 1px solid <{$screen.backcolor}>; background-color: <{$screen.bgcolor}>;}
+.item a {color: <{$screen.frontcolor}>;}
+.item a:hover {color: <{$screen.lightcolor}>;}
+.itemHead {background-color: <{$screen.backcolor}>; color: <{$screen.frontcolor}>; }
+.itemHead a {color: <{$screen.frontcolor}>;}
+.itemHead a:hover {color: <{$screen.lightcolor}>;}
+.itemBody {background-color: <{$screen.bgcolor}>; border: 0px; color: <{$screen.backcolor}>;}
+.itemText {color: <{$screen.backcolor}>; background-color: <{$screen.frontcolor}>;}
+.itemInfo {background-color: <{$screen.frontcolor}>; color: <{$screen.backcolor}>;}
+.itemInfo a {color: <{$screen.backcolor}>;}
+.itemInfo a:hover {color: <{$screen.lightcolor}>;}
+.itemFoot {background-color: <{$screen.backcolor}>; color: <{$screen.frontcolor}>;}
+.itemFoot a {color: <{$screen.frontcolor}>;}
+.itemFoot a:hover {color: <{$screen.lightcolor}>;}
+</style>
+<{/if}>
+
+<{if $movielid}>
+<script type="text/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script>
+<script language="javascript" type="text/javascript">
+function showstuff(boxid){
+document.getElementById('boxswitch').innerHTML = '<a href="#" rel="nofollow" onclick="hidestuff(\'boxswitch\'); hidestuff(\'wsinfobox\'); return false;" title="<{$smarty.const._WS_HIDE}>"><{$smarty.const._WS_HIDE}></a>';
+if (boxid == 'wscodebox')
+document.getElementById('wsinfobox').innerHTML = '<div id="wscodebox"><h3><{$smarty.const._WS_CODEBOX}></h3><p><{$smarty.const._WS_CODEBOX_DSC}></p><form class="wscodeform" name="wscodeform" action=""><{$wscodebox}></form></div>';
+if (boxid == 'wssharebox')
+document.getElementById('wsinfobox').innerHTML = '<div id="wssharebox"><a style="text-decoration: underline;" target="_top" href="mailto:?subject=<{$link.mail_subject}>&amp;body=<{$link.mail_body}>" rel="nofollow" title="<{$smarty.const._WS_SENDEMAIL}>"><{$smarty.const._WS_SENDEMAIL}></a><br /><br /><a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, \'\', \'<{$xoops_url}>/modules/<{$xoops_dirname}>/singlelink.php?lid=<{$link.id}>\', \'<{$link.ltitle}>\');" onmouseout="addthis_close();" onclick="return addthis_sendto();"><img src="http://s7.addthis.com/static/btn/lg-bookmark-en.gif" width="125" height="16" border="0" alt="<{$smarty.const._WS_SOCIALBOOKMARK}>" /></a></div>';
+if (boxid == 'wscatbox')
+document.getElementById('wsinfobox').innerHTML = '<div id="wsinfocatbox" class="wscatbox" onmouseout="wsTimeout(\'wsinfobox\');"><div class="wscatrow"><div class="wscathead"><{if $link.catimage != ""}><img class="wscatlogo" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/images/category/<{$link.catimage}>" alt="<{$link.cattitle}>&nbsp;<{$smarty.const._WS_CATEGORY}>" /><{/if}><div class="wscattitle itemHead itemTitle"><h3><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/playcat.php?cid=<{$link.cid}>" target="_self" rel="follow" title="<{$link.cattitle}>&nbsp;<{$smarty.const._WS_CATEGORY}>"><{$link.cattitle}></a></h3></div></div><{if $link.catdesc != ""}><div class="wscatdesc"><{$link.catdesc}></div><{/if}></div></div>';
+}
+
+function hidestuff(boxid){
+document.getElementById(boxid).innerHTML = '';
+}
+
+function wsTimeout(boxid){
+setTimeout("hidestuff('wsinfobox'); hidestuff('boxswitch');",8000);
+}
+
+function getHTTPObject(){
+if (window.ActiveXObject) return new ActiveXObject("Microsoft.XMLHTTP");
+else if (window.XMLHttpRequest) return new XMLHttpRequest();
+else {      alert("Your browser does not support AJAX.");
+return null;
+}}
+
+function setRatestats(){
+if(httpObject.readyState == 4){
+document.getElementById('ratestats').innerHTML = httpObject.responseText;
+hidestuff('wsratemsg');
+hidestuff('boxswitch');
+}}
+
+function setInfobox(){
+if(httpObject.readyState == 4){
+document.getElementById('wsinfobox').innerHTML = '<div id="wsreportform">'+httpObject.responseText+'</div>';
+}}
+
+function doWork(worklink,op){
+httpObject = getHTTPObject();
+if (httpObject != null) {
+httpObject.open("GET", worklink, true);
+httpObject.send(null);
+if (op == 'ratestats')
+httpObject.onreadystatechange = setRatestats;
+else { httpObject.onreadystatechange = setInfobox; showstuff('boxswitch'); }
+if (op == 'wsrate')
+setTimeout("doWork('ratelink.php?op=wsratenew&lid=<{$movielid}>','ratestats');",3000);
+}} var httpObject = null; 
+
+function wsratingOut() {
+document.getElementById('wsratingbar').style.display= 'block'; 
+document.getElementById('wsratingstats').style.display= 'none';
+}
+  
+function wsratingOver() {
+document.getElementById('wsratingbar').style.display= 'none'; 
+document.getElementById('wsratingstats').style.display= 'block';           
+}
+</script>
+<{/if}>
+
+<script language="javascript" type="text/javascript">
+//Get loop row 1 height and assign it to overflow height.  FireFox only.  IE must use overflow div height set in style.css
+function wsboxHeight(boxid,setboxid,offset) {
+var boxheight=document.getElementById(boxid).offsetHeight;
+if ( boxheight > 0 ) {
+document.getElementById(setboxid).style.height=(boxheight-offset)+"px";
+}
+}
+</script>

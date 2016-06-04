@@ -1,0 +1,28 @@
+<!-- START RATELINK MAIN -->
+<div id="wsmain">
+  <!-- START HEADER BOX -->
+  <div id="wsheader">
+     <div id="wsheadernav">     
+        <{include file="db:webshow_headernav.html"}>      
+     </div>
+     <div id="wsheadertitle">
+        <h1><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/ratelink.php" target="_self"><img src="<{$xoops_url}>/modules/<{$xoops_dirname}>/images/logo.gif" hspace="10" border="0" alt="<{$xoops_pagetitle}>" /><{$xoops_pagetitle}></a></h1>
+     </div>
+     <div id="wsheadertext">
+       <h4><{$link.title}></h4>
+       <ul>
+     	  <li><{$smarty.const._WS_VOTEONCE}></li>
+     	  <li><{$smarty.const._WS_RATINGSCALE}></li>
+     	  <li><{$smarty.const._WS_BEOBJECTIVE}></li>
+     	  <li><{$smarty.const._WS_DONOTVOTE}></li>
+       </ul>
+     </div>
+  </div>
+  <!-- END HEADER BOX -->
+   <form method="post" action="ratelink.php">
+        <input type="hidden" name="lid" value="<{$link.id}>">
+        <input type="hidden" name="cid" value="<{$link.cid}>">
+     	<select name="rating"><option>--</option><option>10</option><option>9</option><option>8</option><option>7</option><option>6</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>&nbsp;&nbsp;
+        <input type="submit" name="submit" value="<{$smarty.const._WS_SUBMIT}>" /><input type=button value="<{$smarty.const._CANCEL}>" onclick="location='<{$xoops_url}>/modules/<{$xoops_dirname}>/singlelink.php?lid=<{$link.id}>'" />
+   </form>
+</div><!-- END RATELINK MAIN -->

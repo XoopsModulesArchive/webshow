@@ -1,0 +1,8 @@
+WebShow Installation
+
+1) Install WebShow using XOOPS Modules Administration.  
+2) Set WebShow module preferences, create a new category and add your media.
+
+To enable keyword tag functions install the TAG Module 2.60 by phppp.
+
+WebShow Technical Support Support at http://wikiwebshow.com/modules/newbb/viewforum.php?forum=3

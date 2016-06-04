@@ -1,0 +1,55 @@
+WebShow v.71 Installation on XOOPS 2.0.* and 2.2.* Core 
+
+Download the WebShow archive
+Upload modules/webshow and uploads/webshow to xoops root
+Open xoops Admin panel - system - modules and install the module. 
+Set the module preferences, create a main category and add your media.
+
+Color Picker:
+Check class/xoopsform/ for a file named formcolorpicker.php, if it does not exist upload class/xoopsform/formcolorpicker.php from this archive.  
+Open class/xoopsformloader.php and look for a line of code with include_once XOOPS_ROOT_PATH."/class/xoopsform/formcolorpicker.php, 
+if it does not exist modify the existing file or upload the one from this archive.
+
+*********************
+
+Additional features:
+
+To enable selectable HTML Text Editors, Captcha and Tags download and install the following additional files:
+
+Frameworks - Provides many common functions for xoops modules such as Captcha confirmation and a generic object handler.
+  Download the archive.  Extract.  Upload Frameworks directory to XOOPS_ROOT.  Done
+
+xoops/class/xoopseditors - Allows selectable wysiwyg and DHTML editors.
+  Download the archive. Extract.  Upload to Xoops_ROOT/class/.  Done.
+  Modules equiped to use this class will now display selectable text editors in their preferences.
+
+Install TAG Module v1.60 by phppp to enable tag functions that display linked keyword tags.
+  Download.  Extract.  Upload to XOOPS_ROOT/modules/.  Goto admin panel system/modules and install the module.
+  Xoops modules coded for TAGS will now have keyword input in their submit form and display a tagbar in their templates.
+
+WebShow will run without these additional files but will not have Captcha Confirmation, Tags or Wysiwyg text editors.
+
+**********************
+
+Possible Conflict:
+
+Problem:
+The Modify Entry form is blank due to Text Body html editor class declaration.
+If you have Frameworks/X22 and a xoopsformloader.php modified to include the text editor classes the Modify Entry Form may crash because these classes are also included by Framework/x22/xoopformloader.php.
+This will cause a class redeclaration which crashes the modify form.
+
+Solution:
+Check xoops/class/xoopsformloader.php
+if it includes the lines:
+include_once XOOPS_ROOT_PATH."/class/xoopsform/formeditor.php";
+include_once XOOPS_ROOT_PATH."/class/xoopsform/formselecteditor.php";
+ 
+Then comment lines 515, 515, 517 in webshow/include/submitform.inc.php.
+
+      // Comment OUT the next three lines if it conflicts with a modified xoopsformloader
+      // if(file_exists(XOOPS_ROOT_PATH."/Frameworks/xoops22/class/xoopsformloader.php")) {
+      //   !@include_once XOOPS_ROOT_PATH."/Frameworks/xoops22/class/xoopsformloader.php";
+      // }
+
+
+WebShow Technical Support Support at http://wikiwebshow.com/modules/newbb/viewforum.php?forum=3

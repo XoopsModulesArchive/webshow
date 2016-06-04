@@ -1,0 +1,224 @@
+WebShow v.71_beta
+The module version has been elevated to 71_beta due to significant changes in language constants and the addition of javascript to the templates.
+
+REWROTE ALL LANGAUGE FILES. 
+Created an admin language file and removed the admin files from main language.
+Revised language main.php. Removed redundant and unused constants.  Renamed variables for old "MyLinks" terms to webshow terms.
+Added new language variables for feed, track and control text.
+Javascript code to display the embed code boxes, broken report, rating and share features.
+Ajax rating form inputs, records and displays the new rating without reloading page. Added star images to rating display.
+The JW Media Player API will now display realtime track data for Feed entries only.
+Engage Entry Preference "Enablejs" to activate the JW MEDIA PLAYER API.
+Select "Feed and Track Data" in Single View Contents module preference.
+Magpierss parses atom and rss feeds for html display.
+Javascript Player controls in feed data.
+Added RSS Text feeds to index and category pages.
+Changed the db fields artist, album, label to credit1, credit2, credit3.  Updated all related script and template occurances.
+Converted all graphics to gif.
+Image fetch function recoded.
+Created dynamic language images for Popular, New and Updated buttons. New language constants, image slices and css display dynamic images.
+Removed language dependent pop.gif, new.gif and updated.gif buttons.
+CSS w3c validated.  Corrected class and id names in css.
+added template webshow_inline.html that contains dynamic style and javascript
+Added new templates for Feed and Track data.
+Added mod preference "column count" for catalog page layout.
+Added module preference "Blank Logo in Catalog Views".  Select 'Leave Blank' or 'Use Stock Logo' in catalog views when an Entry Logo is not selected.
+Added new variable to display Media Host credit for embed media.
+Revised all embed plugins to include Host Name and Link
+New Embed Plugins: hulu, bliptv, Yahoo-video, Yahoo-music-video
+Added HTML Body Text Area to Category Pages.
+Revised subcategory menu and added to category page footer.
+Updated the search form input box.
+Fixed auto publish/expire bugs.
+Added rollover effects to links block.  Now Called "Media Links"
+Added new block called "Rollover" that adds text description, javascript rollover and css effects to the old links block
+Added random sorting to all blocks.
+Inline style in blocks.
+Using JW MEDIA PLaYER 3.16
+*********************************
+
+WebShow v.65_beta
+Using JW MEDIA PLAYER 3.16
+Added Search Features. The JW Player now has an optional search bar and link.  The modules pages have search forms.
+Added the media player to all catalog views.  Player off switch included.
+External Thumbnail images are now fetched and saved to server.
+Download function repaired.
+Added javascript to Code links
+Condensed submit form and functions code.
+Revised Page nav to use xoops class.
+
+WebShow v.63_beta
+Using JW MEDIA PLAYER 3.15
+Added Embed Plugins for many media sharing sites.
+Added global display preferences for catalog and single views.
+Added a flash variable editor to the admin panel.
+Added log switch to module preferences.
+Revised the Media Manager admin panel to include selectable sorts, statistics and log file viewer.
+Added Category menu block.
+Added new Audio variable thats assigns an mp3 url to slide show or second audio in other media.
+Added Top Views page to main menu
+Added permissions elements to category admin forms.
+Moved download permissions from category to media entry level.
+Added templates/style.css.  Using theme css for color and module css for sizing. Removed the inline styles from templates. 
+Added Submit Media links to templates.
+Revised the user submit form.
+Revised the page hit counter to score a hit on page view instead of website visit.
+Added Media View counter.  Adds a hit whenever the media is loaded.
+Improved the brokenlink form to include abuse, broken and copyright reports. Abuse report takes the entry offline.  
+Admin Panel "Reports" tab displays the report type and comment.  
+Fixed the Publish Date bug.  Module now has fields for created date, published (last modify) date and expire date.
+Replaced depreciated text sanitizer functions
+Frameworks, xoopseditors and tag module addons are now optional.  Install them for captcha, wysiwyg editor and tag features.
+Engaged the Callback functions of the JW Player.  Callback.php receives and logs the player start event to log.txt.
+Engaged the JW Player Config file variable.  Instead of showing numerous flash variables in the code boxes, the script 
+calls config.php which generates an xml file containing the variables.  This hides the movies variables 
+(including media file location) and cleans up the embed links.  Unfortunately, several variables are not working using config, 
+this is a fault of the JW Player and should be resolved soon.
+
+WebShow v.61_beta
+
+The module version number was moved into sixty series in order to mark the point at which xoops Frameworks, tag module and class/xoopseditors were required.
+
+Using JW Media player 3.11.  A license is required for commercial use. See www.jeroenwijering.com
+
+Added Captcha to the submit forms. Requires Frameworks. Select option in mod preferences.
+
+Added xoopseditors for the body text area. Requires class/xoopseditors. Select an editor in module preferences.
+
+Added Tags. Requires phppp's Tag module. Tags are included in meta keywords.
+
+Added playcat.php and html to display the player and scrolling category links.
+
+Added playposter.php and html view to display the player and a scrolling list of posts by user.
+
+Added meta keyword count, minimum length and common word list to the module preferences and the meta keyword function.
+
+Added javascript embed code to info box. Modified embed code to include object embed.
+
+Added submit_utube form for easy frontside utube submit. Enter a youtube page url and the script will fill in the media file location, media type and logo url. This form uses playerid #1 by default.  Create a custom player for youtube videos and then enter that player ID on line 31 of submit_utube.php.
+
+Revised user submit form to apply the module's submit and auto-approve permissions to the entry permissions.
+
+Revised the html templates to work better with Firefox browser.
+
+Removed module config "template". The singlelink view 1 to 2 column switchover is now handled with css.
+
+Turned off html in block descriptions.
+
+Added group download permissions to wsdwnlod.php
+
+The cached playlist name in modify media editor now has a link to the generated playlist.
+
+Reset playlist cache default to one week. Was 1 day.
+
+Repaired player preview in the "color from theme" player editor.
+
+Submiting a new category now forwards to category view permissions.
+
+Revised playlist.php to report playlist status to admin.  The cache file is now checked when movie.php is called.
+
+Added Allow Comments to the media entry form.
+
+Checked all files for the depreciated $down variable and and replaced it with the new $showinfo array.
+
+
+WebShow v.57_beta
+
+Updated to JW Media Player 3.9 which adds the ability to show pre and post roll advertisements.
+
+Added the "Information Box".  It contains the entry logo, description, credits, statistics and download, website, webfeed, embed and page links and boxes.  Turn off the Info Box or select which info is to be displayed using the media editor.  Added "showinfo" field to db. Modified playlistform.inc.php to add Y/N Radios for $showinfo array.
+   
+Added embed code box.  Shows for local media only.  Media from external sources will not show an embed link.
+
+Added a download link and button. The download button will only display for single file entries that have a recognized Flash media file (.flv, .swf,.jpg, .png, .gif, .mp3) extension. The download button links to includes/wsdnlod.php which forces a download dialog to open. Added group download permission by category to admin/perm.php. 
+
+Revised the index, viewcat and singlelink templates.  Added "Info Box".
+
+Fixed bug in webfeed link that caused the root path to be displayed.
+
+Fixed bug in popmovie.php where punctuation in title caused error.
+
+Fixed bug in include/playlistform.inc.php that was hiding Animation (Show EQ) option.
+
+Fixed numerous bugs in the blocks. Fixed random sort and category limit.  No VIEW PERMISSIONS in blocks yet.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+WebShow v.55 release on June 19, 2007
+Updated to Jeroen Wijering's Flash Media Player 3.8.
+
+Added Auto Publish and Expire functions.
+Added entry view permissions.
+
+The player editor now offers a choice of "Color Style Options".
+1) Monochrome - Flash Media Player's default colors are monochrome.
+2) Color from Theme - The module (admin/themestyle.php) filters all of the allowed theme's cascading style sheets for body, itemHead and a:hover colors and stores them in db table webshow_theme.  Use picker or enter hexclr to override.
+3) Custom Player Colors - Pick custom colors.
+4) Custom Player and Page Colors - Apply custom colors to player and the singlelink page.
+
+Added a new file, include/playlist.php, which contains the functions needed to create an xspf playlist from directory or fetch an external playlist file using snoopy, name the playlist cache file, save  filename to db, and save the file to xoops cache path/webshow.  Added listcache field to links table to store cached playlist filename.
+
+Added playlist cache function for feed and media directory entries.  
+Cache refresh time and manual refresh controls have been added to the playlist editor. When a new webfeed entry is saved, the module will fetch, name and cache the feed.  If a media directory is entered the module will create, name and cache an XSPF Playlist. 
+
+When the Modify Playlist Form is submitted, the cached playlist will refresh if the entry title has changed, the cache time has expired or if the playlist file is missing.  The cache file is checked when the single link view is selected as well.
+
+Revised playlistform.inc.php to only show the form elements needed for the specific listtype and srctype in use.  Added "Logo from URL" field.
+
+Updated Playit block. Included revised movie.php code. Fixed random sort bug causing occassional empty block. Modified webshow_block_playit.html template. 
+
+Revised movie.php so that single file entries with no file extension in the url will play.  Flash variable "type" uses media source type from db.
+
+Added bubbles and slow fade transition to Slide Show (Image Rotator).
+
+Entry logo now shows in the player's screen.
+ 
+Repaired bugs in modify player.
+
+Added Credits (artist, album and label) to the entry forms and singlelink template. Renamed db field author to artist and added a new field named "label".
+Added credits (author, album, label) to the singlelink template.
+
+Removed itemHead class (banner) from h1 Header on all template.  Now shows images/logo and page title with no background image or color. 
+
+Coded module for $captions flash variable.  Shows a close caption text during movie.  See Jeroens site for info on captions.
+
+Admin Maintenance - Now displays a status table on the index page when is_admin.  Revised the Media Manager table.  Both tables now display a status report for offline and modify requested entries.
+
+Revised meta keywords, description and page title. Short description = meta_desc. Module, category, entry name = page title.  keywords are a filter title, all short desc displayed.
+
+The module is 98% xhtml valid. the only remaining error is in xoops notifications.
+
+May 1, 2007 WebShow v.53_alpha released
+
+Added view, submit and approve permissions.
+Removed mod configs: allow anon submissions and auto approve.
+Created xspfgen.php to auto generate, name and save an xspf playlist from a media directory.
+Added author and album fields.
+Added enablejs flash variable and field. Disabled atm.
+Fixed bug. The Media Player uses the last 3 chrs of a single file url to determine its file type.  Urls without media file extension would not play.  Now, if playing a single file, the script checks the url for a media file extension and if none is present it uses $srctype from database.
+
+Created update.inc.php and added onupdate to version.php
+Edited language constants.
+Using jeroen Wijering's Flash Media Player Version 3.36
+
+April 11, 2007 WebShow v.51_alpha released
+Coded admin and submitter permissions into modify link operations. Only admin and submitter can modify a link.
+Modify link now redirects Admin to backside modify playlist form.
+Added captions to flash var table and playlist form. Disabled atm.
+Added display width and large control flash variables to player table and player.php.
+Added ModuleConfig['template'] to module preferences. Used to control single or two column formatting of template/singlelink.html.
+Moved playerlogo from player table to flashvars table
+Moved playerlogo code from player.php to playlist.inc.php and admin/index.php?op=newLink
+Moved inherit player style code to playerstyle.inc.php in templates folder. 
+Changed banner div style in templates.
+Optimized flash variables in the movie link in movie.php.If the flash variable is set to script default it is not included in the link.
+Fixed url encode for listurl in movie.php.
+Fixed logo upload in submit.php.  
+Rearranged fields and changed language variables in include/playlistform.php 
+New Variables and wording changes to language/english/main.php.
+Coded a check for default player into admin/index.php and player.php
+Inserts Default player data if playerid1 does not exist. 
+Coded a "Add Sample" button that offers to insert sample link data if the table is empty.
+Removed insert data from mysql.
+Added check for xoops root path to all included files.
+
+March 23, 2007 WebShow v.50_alpha released. 

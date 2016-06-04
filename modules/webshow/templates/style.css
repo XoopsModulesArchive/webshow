@@ -1,0 +1,191 @@
+/* $Id: webshow/templates/style.css 2576 2009-5-12 16:47:24 TCNET */
+/* ENTRY ITEMS */
+/* If your theme has itemInfo classes, the Web Show module will inherit background and font color style from the theme's itemTitle, itemHead and itemInfo classes.
+** wsitemInfo Classes overrides everthing but color from these classes.
+** If your theme does not have itemClasses the module will have no color.  
+** You can customize the following classes and add them to your theme's style.css.
+.item {}
+.item a {}
+.item a:hover {}
+.itemHead {background-color: #2A75C5; color: #ffffff;}
+.itemHead a {}
+.itemHead a:hover {}
+.itemTitle a {color: #fff; background-color: transparent;}
+.itemBody {}
+.itemText {}
+.itemInfo {background-color: #efefef;}
+.itemInfo a {}
+.itemInfo a:hover {}
+.itemFoot {background-color: #efefef;}
+.itemFoot a {}
+.itemFoot a:hover {}
+*/
+
+#wsmain {width: 100%;}
+.wsnowrap {white-space: nowrap;} /* nobreak */
+
+#wsmain h1 {margin: 0px; padding: 6px; font-size: 100%;}
+#wsmain h2 {margin: 0px; padding: 2px; font-size: 100%;}
+#wsmain h3 {margin: 0px; padding: 2px; font-size: 90%;}
+#wsmain h4 {margin: 0px; padding: 1px; font-size: 100%;}
+
+/* MAIN HEADER */
+#wsheader {float: left; width: 99%; margin: 0px 0px 8px 0px; padding: 0px;}
+#wsheadernav {float: right; width: 50%; margin: 0px 0px 4px 0px; padding: 0px; text-align: right;}
+#wslogo {float: left; width: auto; margin: 0px; padding: 2px; text-align: center; border: 1px solid #111;}
+#wsheadertitle {float: left; width: auto; margin: 0px; padding: 0px; font-size: 90%;}
+#wsheadersubtitle {float: left; width: 85%; margin: 4px 0px; padding: 0px;}
+#wsheadertext {float: left; width: 96%; margin: 4px 1%; padding: 0px;}
+#wsheadertext:first-letter {font-size:120%; font-weight: 600;}
+
+/* MAIN FOOTER */
+#wsfooter {float: left; width: 100%; margin: 4px 0px; padding: 0px; font-size: 90%;}
+#wsfooternav {float: right; width: 100%; margin: 0px; padding: 0px; text-align: right;}
+#wsfootertext {float: left; width: 96%; margin: 4px 1%; padding: 0px; text-align: left;}
+
+/* BODY TEXT */
+#wsbody {float: left; width: 99%; margin: 0px 0px 8px 0px; padding: 0px;}
+#wsbodyTitle {margin: 0px; padding: 3px 0px;}
+#wsbodyText {float: left; width: 96%; margin: 0px 1%; padding: 0px;}
+
+/* CATEGORY BOX */
+.wscatbox {width: 100%; margin: 0px; padding: 0px; text-align: left;}
+.wscatrow {width: 100%; margin: 4px 0px 0px 0px; padding: 0px;}
+.wscathead {float:left; width: 100%; margin: 0px; padding: 0px;}
+.wscatcell {float: left; width: 32%; margin: 2px 6px 4px 0px; padding: 0px;} 
+.wscattitle {float: left; width: auto; margin: 0px; padding: 0px; font-size: 100%; background-color: none;}
+.wscatlogo {float: left; width: auto; margin: 0px; padding: 2px; text-align: center;}
+.wscatdesc {float: left; width: 92%; text-align: left; margin: 4px 2%; padding: 0px;}
+.wscatdesc:first-letter {font-size:120%; font-weight:600;}
+.wscatcontents {float: left; width: 94%; margin: 4px 4%;}
+.wssubcatbox {clear: both; float: left; width: 94%; margin: 4px 2%; padding: 0px; font-size: 85%;}
+.wssubcattitle {float: left; width: 100%; margin: 0px;}
+.wssubcatcontents {float: left; width: 96%; margin: 4px 1%; padding: 0px 0px 4px 0px;}
+
+/* MOVIE BOX*/
+#wsmoviebox {} /* Set in webshow_inline.html */
+#wssinglemoviebox {float: left; width: 100%; margin: 0px; padding: 0px;}
+
+/* MOVIE COLUMN (Left Column) */
+#wsmovie {}
+
+/* MOVIE LINK COLUMN (Right Column auto width)  */
+#wsmovielink {float: left; width: auto; min-width: 300px; margin: 0px 2px 4px 0px; padding: 0px; border: 1px solid #111;}
+#wssinglemovielink {float: left; width: auto; margin: 0px 0px 4px 0px; padding: 0px; border: 1px solid #111;}
+
+/* LOOP BOX */
+#wsloopbox {float: left; width: auto; min-width: 300px; margin: 0px 0px 4px 0px; padding: 0px; border: 1px solid #111;} 
+#wsloophead {width: 100%; margin: 0px; padding: 0px; text-align: center; border-bottom: 1px solid #111;} /* Also uses itemHead class from theme css  */
+#wslooptitle {text-align: center;}
+
+#wssortby {float: left; width: 100%; margin: 0px; padding: 2px 0px; text-align: center; font-size: 90%; border-bottom: 1px solid #111;}
+#wssortbyleft {float: left; width: 35%; margin: 0px; padding: 3px 0px 0px 6px; text-align: left;}
+#wssortbyctr {float: left; width: 20%; margin: 0% 1%; padding: 3px 0px;}
+#wssortbyright {float: right; width: auto; margin: 0px; padding: 1px 4px 1px 0px; text-align: right;}
+#wssortform {margin: 0px; padding: 0px;}
+
+#wsoverflow {width: 100%; margin: 0px; overflow: auto; height: 380px;} /* Set OVERFLOW Height Here */
+#wsoverflow .wslooprow {float: left; width: 94%; margin: 0px; padding: 0px;} /* max 96% due to IE scrollbars */
+#wsflow {width: 100%; margin: 0px; padding: 0px;}
+#wsflow .wslooprow {width: 100%; margin: 0px ; padding: 0px;}
+.wsloopcolumn {} /* Set in webshow_inline.html */
+
+#wsloopfoot {float: left; width: 100%; margin: 0px; padding: 0px; border-top: 1px solid #111;}
+#wsloopfootleft {float: left; width: auto; margin: 0px; padding: 0px;}
+#wsloopfootright {float: right; width: auto; margin: 0px; padding: 0px; text-align: left;}
+
+/* MOVIE ITEM CONTAINER */
+.wsmovieinfo {float: left; width: 100%; margin: 0px; padding: 0px;}
+
+/* ENTRY ITEM CONTAINER for LOOP LINK */
+.wsiteminfo {float:left; width: 100%; margin: 0px; padding: 0px; border: 0px;}
+
+/* ENTRY ITEM CLASSES used in all views */
+.wsitemhead {float: left; width: 100%; margin: 0px; padding: 0px; border-bottom: 1px solid #111;}
+.wsitemtitle {float: left; width: 100%; margin: 0px; padding: 0px; text-align: left;}
+.wsitemlogo {} /* Set in webshow_inline.html */
+.wsitemdesc {float: left; max-width: 45%; width: auto; min-width: 145px; margin: 2px 4px; padding: 0px; font-size: 90%; text-align: left; border-bottom: 0px solid #111;} /* dynamic dimensions are set in link templates */
+.wsitemdesc:first-letter {font-size:100%; font-weight:600;}
+.wsitemcontents {float: left; max-width: 50%; width: auto; min-width: 150px; margin: 2px 0px 2px 2px; padding: 0px; text-align: left;}
+.wsitemstats {clear: left; float: left; width: 140px; margin: 0px; padding: 0px; text-align: left; font-size: 85%;}
+.wsitemcredits {float: left; width: 140px; margin: 0px 0px 2px 0px; padding: 0px; text-align: left; font-size: 85%;}
+.wsitemrate {clear: left; float: left; width: 140px; margin: 0px padding: 0px; text-align: left; font-size: 85%;}
+.ratingbar {float:left; width: 55px; background: url(../images/star_x_grey.gif) 0 0 repeat-x;}
+.ratingbar div {height: 12px; background: url(../images/star_x_orange.gif) 0 0 repeat-x;}
+.wsitemtagbar {float: left; width: 99%; margin: 0px 0px 2px 2px; padding: 0px; text-align: left; font-size: 85%; border-top: 1px solid #111;}
+.wsitemfoot {float: left; width: 99%; margin: 0px 0px 2px 0px; padding: 0px; font-size: 85%; border-top: 1px solid #111;}
+.wsitemfootleft {float: left; width: 60%; margin: 0px 2px; padding: 0px; text-align: left;}
+.wsitemfootright {float: right; width: auto; margin: 0px 2px; padding: 0px; text-align: right;}
+
+/* INFOBOX */
+.wsinfoboxhead {float: left; width: 99%; margin: 0px 0px 0px 2px; padding: 0px; font-size: 85%; text-align: left; border-top: 1px solid #111;}
+#wsinfoboxmenu {float: left; width: auto;}
+.wsinfobox {float: left; width: 99%; margin: 0px; padding: 0px; text-align: left; font-size: 90%;}
+#wsinfobox {}
+#wsinfocatbox {}
+#boxswitch {float: right; width: auto; margin: 0px; padding: 2px; text-align: right;} /* Info Box Hide Link  */
+#boxswitch a {font-weight:600; text-decoration: underline;} /* Info Box Hide Link */
+
+/* CODES */
+#wscodebox { margin: 4px;}
+.wscodeform {float: right; width: 98%; text-align: right; padding: 0px 2px; font-size: 100%;}
+.wscodeformrow {margin: 4px 0px; padding: 0px; white-space: nowrap;}
+.wscodeform input {width: 80%; padding: 2px; font-size: 100%; background-color: #eee;}
+
+/* SHARE */
+#wssharebox {float: left; width: 98%; margin: 4px; padding: 0px; text-align: left; font-size: 90%; font-weight: 600;}
+
+/* RATE */
+#wsrateform {width: 96%; float: right; text-align: left; padding: 2px 4px; font-size: 100%;}
+#wsratemsg {font-weight: 600; text-align: left; padding: 2px;}
+
+/* FORMS */
+.wscatselect {float: right; width: auto; padding: 0px;}
+.wscatselect select {font-size: 95%; background-color: #fff;}
+.wscatselect a {margin: 0px; padding: 0px; font-size: 85%; font-weight: 600;}
+.wscatselect img {margin: 0px; padding: 0px; vertical-align: top; }
+
+.wssearchbox {float: right; width: auto; padding: 1px; cursor: pointer; font-size: 85%; font-weight: 600;}
+#wssearchbox {}
+.wssearchbox form {float: left; margin: 0px; padding: 0px;}
+.wssearchbox input {font-size: 100%; margin: 0px 2px; padding: 1px; background-color: #eee; border: 1px solid #111;}
+
+#wssubmitform {clear: both; float: left; width: 100%;}
+#wsreportform {width: 99%;}
+
+/* PAGE NAV */
+.xo-pagenav {margin: 0px; padding: 0px;}
+#xo-pagenav {width: auto; margin: 0px; padding: 2px 0px 2px 0px; text-align: left; white-space: nowrap; font-size: 100%; color: #000;}
+.xo-counterpage {margin: 0px; padding: 1px 2px; font-size: 100%; background-color: transparent; border: 0px;}
+.xo-pagact {margin: 0px; padding: 0px; font-size: 100%; background-color: #ccc; border: 0px}
+.xo-pagarrow {margin: 0px; padding: 0px 2px; font-size: 100%; background-color: transparent; border: 0px}
+
+/* NEW and POPULAR BUTTONS  */
+/* Uses left, center, right image slices to create dynamic text buttons. */
+.wsbuttonfltlt {float: left; margin: 2px; padding: 0 0 0 6px; background: url(../images/leftbutton.gif) no-repeat;}
+.wsbuttonfltrt {float: right; margin: 2px; padding: 0 0 0 6px; background: url(../images/leftbutton.gif) no-repeat;}
+.wsbuttoncenter {float: left; padding: 0px 2px; line-height: 14px; background: url(../images/centerbutton.gif) repeat-x left top #eee;}
+.wsbuttonright {float: left; padding: 0px 6px 0px 0px; height: 14px; background: url(../images/rightbutton.gif) repeat-x right top;}
+.wsbuttonright a {font-size: 9px; color: #000; font-weight: 600;} /* WARNING FONT size changes center image height */
+.wsbuttonright.wsmenu a:hover {font-size: 9px; color: green; font-weight: 600;} /* WARNING FONT size changes center image height */
+.wsbuttonright.wsnewbutton a {color: blue;}
+.wsbuttonrigh a {color: green;}
+
+/* JAVASCRIPT CONTROL buttons */
+#wscontrolbuttons {float: left; width: auto; margin: 0px 4px 0px 0px; padding: 2px 0px 0px 4px; border: 1px solid #111; background-color: #eee;}
+
+/* ID3 TAGS  */
+#wsid3tag {float: left; width: 98%; margin: 4px 0px; padding: 2px; font-size: 90%; text-align: left; border: 1px solid #111;}
+
+/* TRACK DATA  */
+#wstrackdata {float: left; width: 98%; margin: 4px 0px; padding: 0px; text-align: left; border: 1px solid #111;}
+#wstrackoverflow {float: left; width: 98%; overflow: auto; height: 80px; margin: 2px 0px; padding: 2px; background-color: #ccc; border: 1px solid #111;} 
+
+/* FEED DATA  */
+#wsfeeddata {float: left; width: 98%; margin: 0px; padding: 3px; text-align: left; border: 1px solid #111;}
+#wsfeedoverflow {float: left; width: 98%; overflow: auto; height: 240px; margin: 4px 0px; padding: 2px; background-color: #ccc; border: 1px solid #111;}
+
+/* SYSTEM */
+#wsadmintable {float: left; width: 98%; margin: 5px 0px; text-align: center;}
+#wsnotify {float: left; width: 98%; margin: 5px 0px; text-align:center;}
+#wscomments {float: left; width: 98%; margin: 5px 0px; padding: 0px;}
